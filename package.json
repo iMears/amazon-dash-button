@@ -1,0 +1,25 @@
+{
+  "name": "amazon-dash-button",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dash.js",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "find-my-iphone": "^1.1.1",
+    "node-dash-button": "^0.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iMears/amazon-dash-button.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iMears/amazon-dash-button/issues"
+  },
+  "homepage": "https://github.com/iMears/amazon-dash-button#readme"
+}

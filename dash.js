@@ -2,10 +2,12 @@
 
 require('dotenv').config()
 
-const connect = require('node-dash-button');
-const dash = connect(process.env.DASH_ADDRESS, null, null, 'all');
+const DashButton = require('node-dash-button');
+const dashButton = DashButton(process.env.DASH_ADDRESS, null, null, 'all');
+const findIPhone = require('./find');
 
 // warning this may trigger multiple times for one press
-dash.on("detected", () => {
-  console.log("omg found");
+dashButton.on('detected', () => {
+  console.log('Button push detected!');
+  findIPhone();
 });
