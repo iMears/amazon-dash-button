@@ -1,9 +1,11 @@
 'use strict';
 
-const dashButton = require('node-dash-button');
-const dash = dashButton("74:75:48:19:b4:fe", null, null, 'all'); //address from step above
+require('dotenv').config()
+
+const connect = require('node-dash-button');
+const dash = connect(process.env.DASH_ADDRESS, null, null, 'all');
 
 // warning this may trigger multiple times for one press
-dash.on("detected", function () {
-    console.log("omg found");
+dash.on("detected", () => {
+  console.log("omg found");
 });
