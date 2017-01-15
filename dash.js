@@ -7,7 +7,7 @@ const dashButton = DashButton(process.env.DASH_ADDRESS, null, null, 'all');
 const findIPhone = require('./find');
 
 // warning this may trigger multiple times for one press
-console.log('listening...')
+console.log('Waiting for button push...')
 dashButton.on('detected', () => {
   console.log('Button push detected!');
   findIPhone();

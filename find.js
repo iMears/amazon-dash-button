@@ -1,26 +1,27 @@
-var icloud = require('find-my-iphone').findmyphone;
+const iCloud = require('find-my-iphone').findmyphone;
 
-require('dotenv').config()
-
-icloud.apple_id = process.env.APPLE_ID;
-icloud.password = process.env.PASSWORD;
+iCloud.apple_id = process.env.APPLE_ID;
+iCloud.password = process.env.PASSWORD;
 
 module.exports = () => {
-  icloud.getDevices((error, devices) => {
-    if (error) throw error;
+  iCloud.getDevices((err, devices) => {
+    if (err) throw err;
 
     var device;
 
     devices.forEach((_device) => {
-      if (_device.name === process.env.DEVICE_NAME) {
+      if (_device.id === process.env.DEVICE_ID) {
         device = _device
       }
     });
 
     if (device) {
-      icloud.alertDevice(device.id, (err) => {
+      iCloud.alertDevice(device.id, (err) => {
+        if (err) console.error(err)
         console.log("Beep Beep!");
       });
+    } else {
+      console.log('No device!')
     }
   });
 };
