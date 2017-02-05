@@ -5,9 +5,7 @@
   "main": "dash.js",
   "dependencies": {
     "dotenv": "^4.0.0",
-    "find-my-iphone": "^1.1.1",
-    "lodash": "^4.17.4",
-    "node-dash-button": "^0.6.1"
+    "find-my-iphone": "^1.1.1"
   },
   "devDependencies": {},
   "scripts": {
